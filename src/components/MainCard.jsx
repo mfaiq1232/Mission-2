@@ -8,14 +8,14 @@ import { CgWebsite } from "react-icons/cg";
 
 const MainCard = () => {
   return (
-    <div className=" bg-white pt-6  rounded-2xl overflow-hidden">
+    <div className=" bg-white dark:bg-gray-800 pt-6  rounded-2xl overflow-hidden">
       {/* div for about section */}
       <div className="pb-[30px] px-5">
-        <div className=" font-poppins text-3xl font-bold text-gray-700 pb-4">
+        <div className=" font-poppins text-3xl font-bold text-gray-700 dark:text-white pb-4">
           <h1>About Me</h1>
           <div className="bg-blue-800 w-12 h-1.5 rounded-full mt-1 "></div>
         </div>
-        <div className=" font-poppins font-semibold text-gray-500 text-sm">
+        <div className=" font-poppins font-semibold text-gray-500 dark:text-gray-300 text-sm">
           <p>
             As a software engineer, I'm driven by a passion for problem-solving
             and innovation. With a keen eye for detail and a knack for logical
@@ -31,8 +31,8 @@ const MainCard = () => {
       </div>
 
       {/* div for what I'm Doing section */}
-      <div className=" bg-gray-100 w-full px-5 font-poppins ">
-        <h1 className="text-gray-700 font-bold text-2xl pt-4">
+      <div className=" bg-gray-100 dark:bg-gray-700 w-full px-5 font-poppins ">
+        <h1 className="text-gray-700 dark:text-white font-bold text-2xl pt-4">
           What I'm Doing
         </h1>
 

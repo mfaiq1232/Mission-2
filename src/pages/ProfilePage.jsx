@@ -4,10 +4,7 @@ import MainCard from '../components/MainCard'
 
 const ProfilePage = () => {
   return (
-    <div
-      className="w-screen  flex justify-around items-start bg-cover pb-32 overflow-x-hidden bg-gradient-to-r from-blue-200 to-indigo-200"
-    
-    >
+    <div className="w-screen  flex justify-around items-start pb-32 overflow-x-hidden  bg-indigo-200 dark:bg-gray-900 ">
       <div className=" -ml-6  -mt-10" style={{ width: "30%" }}>
         <ProfileCard />
       </div>
