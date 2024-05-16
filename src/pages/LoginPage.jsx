@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from "react-router-dom";
 import logBack from '../assets/logBack.jpg'
+import InputField from '../components/InputField';
 
 const LoginPage = () => {
     const navigate = useNavigate()
@@ -31,11 +32,10 @@ const LoginPage = () => {
               >
                 Email
               </label>
-              <input
-                name="email"
-                type="email"
-                placeholder="admin@example.com"
-                className="w-full rounded-xl border bg-gray-5 px-3 py-2 text-gray-800 outline-none ring-indigo-300 focus:ring dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"
+              <InputField
+                name={"email"}
+                type={"email"}
+                placeholder={"admin@example.com"}
               />
             </div>
 
@@ -46,11 +46,10 @@ const LoginPage = () => {
               >
                 Password
               </label>
-              <input
-                name="password"
-                type="password"
-                placeholder="*********"
-                className="w-full rounded-xl border  px-3 py-2 text-gray-800 outline-none ring-indigo-300 focus:ring dark:bg-gray-600 dark:text-gray-100 dark:border-gray-500"
+              <InputField
+                name={"password"}
+                type={"password"}
+                placeholder={"*********"}
               />
             </div>
 

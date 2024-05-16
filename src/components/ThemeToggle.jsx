@@ -1,25 +1,28 @@
 import React, { useEffect, useState } from 'react'
 
+
+   
 const ThemeToggle = () => {
-    const [theme, setTheme] = useState('light');
-    const [checkMode, setcheckMode] = useState(false);
+ 
+  const [theme, setTheme] = useState(() => {
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme || 'light';
+  });
 
-    useEffect(()=>{
-        if(theme === 'dark'){
-            document.documentElement.classList.add('dark');
-        }
-        else{
-            document.documentElement.classList.remove('dark')
-        }
-    },[theme]);
-
-    const handleToggleTheme = ()=>{
-        setTheme(theme === 'dark'?'light':'dark');
-        if(theme === 'dark') {setcheckMode(true);}
-        else{
-            setcheckMode(false);
-        }
+  
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
     }
+  }, [theme]);
+
+  // Toggle between light and dark themes
+  const handleToggleTheme = () => {
+    setTheme(theme=== 'dark' ? 'light' : 'dark');
+  };
 
 
 
@@ -30,6 +33,7 @@ const ThemeToggle = () => {
     <div className="">
       <button
       onClick={handleToggleTheme}
+      
    
         className="h-12 w-12 rounded-2xl p-2 hover:bg-gray-100 dark:hover:bg-gray-700"
       >
