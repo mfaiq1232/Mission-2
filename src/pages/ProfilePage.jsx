@@ -1,7 +1,6 @@
 import React from 'react'
 import ProfileCard from '../components/ProfileCard'
 import MainCard from '../components/MainCard'
-
 const ProfilePage = () => {
   return (
     <div className="w-screen  flex justify-around items-start pb-32 overflow-x-hidden  bg-indigo-200 dark:bg-gray-900 ">

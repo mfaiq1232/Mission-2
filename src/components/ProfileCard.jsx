@@ -5,14 +5,25 @@ import { TfiEmail } from "react-icons/tfi";
 import { FaMobileAlt } from "react-icons/fa";
 import { GoLocation } from "react-icons/go";
 import { SiSkypeforbusiness } from "react-icons/si";
-import { FaFacebookF } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer, toast } from "react-toastify";
 import MyImage from '../assets/myImg1.jpg'
 
 const ProfileCard = () => {
+  const showToast = () => {
+    toast.success("Downloading CV", {
+  
+      loading:false,
+      pauseOnFocusLoss: false,
+      className:'bg-green-400 text-white rounded-3xl font-poppins font-bold ',
+      
+
+    });
+
+  };
   return (
     <div className="relative">
       {/* div for the image */}
@@ -43,7 +54,10 @@ const ProfileCard = () => {
           </div>
         </div>
 
-        <div style={{ height: "55%" }} className=" bg-gray-100 dark:bg-gray-700 w-full py-8 ">
+        <div
+          style={{ height: "55%" }}
+          className=" bg-gray-100 dark:bg-gray-700 w-full py-8 "
+        >
           <div className="pl-6 text-gray-500 dark:text-gray-300 text-sm space-y-3">
             <div className="flex justify-start items-center space-x-2">
               <IoCalendarOutline />
@@ -70,8 +84,12 @@ const ProfileCard = () => {
               <p>faiq_israr</p>
             </div>
           </div>
-          <div className="flex items-center justify-center pt-4">
+          <div
+            className="flex items-center justify-center pt-4"
+            onClick={showToast}
+          >
             <Button />
+            <ToastContainer position="bottom-center" />
           </div>
         </div>
       </div>
