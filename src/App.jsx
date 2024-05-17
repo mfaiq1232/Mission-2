@@ -1,17 +1,11 @@
-import "./App.css";
-import LoginPage from "./pages/LoginPage";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import ProfilePage from "./pages/ProfilePage";
-import HomePage from "./pages/HomePage";
+import SkillsCard from "./components/SkillsCard";
+import { MdMovieEdit } from "react-icons/md";
+import ProfileCard from './components/ProfileCard'
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LoginPage/>} />
-        <Route path="/home" element={<HomePage/>} />
-        <Route path="/profile" element={<ProfilePage/>} />
-      </Routes>
-    </BrowserRouter>
+    <div className="h-screen flex justify-center items-center bg-yellow-200">
+     <ProfileCard/>
+    </div>
   );
 }
 
