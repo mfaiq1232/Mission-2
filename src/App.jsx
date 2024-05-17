@@ -1,16 +1,29 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 
 import ThemeToggle from "./components/ThemeToggle";
 import ProfilePage from "./pages/ProfilePage";
+import LoginPage from "./pages/LoginPage";
+import HomePage from "./pages/HomePage";
+import { ContextProvider } from "./context/ContextProvider";
+import SignUpPage from "./pages/SignUpPage";
 
 function App() {
   return (
-    <>
-      <div className=" absolute right-4 top-2">
-        <ThemeToggle />
-      </div>
-      <ProfilePage/>
-    </>
+    <ContextProvider>
+      <BrowserRouter>
+        <div className=" absolute right-4 top-2">
+          <ThemeToggle />
+        </div>
+
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/register" element={<SignUpPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+        </Routes>
+      </BrowserRouter>
+    </ContextProvider>
   );
 }
 

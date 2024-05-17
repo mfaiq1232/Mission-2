@@ -11,8 +11,12 @@ import { FaGithub } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
 import MyImage from '../assets/myImg1.jpg'
+import { useStateContext } from '../context/ContextProvider';
 
 const ProfileCard = () => {
+
+  const {credentials} = useStateContext();
+
   const showToast = () => {
     toast.success("Downloading CV", {
   
@@ -42,10 +46,10 @@ const ProfileCard = () => {
           className="mt-24 space-y-2 flex flex-col items-center justify-center -ml-"
         >
           <h1 className="text-3xl font-bold text-gray-700 dark:text-white pb-2">
-            M Faiq Israr
+            {credentials.name}
           </h1>
           <div className="flex items-center justify-center bg-gray-200 w-40 h-6 text-center rounded-full text-sm text-gray-500 dark:text-gray-900 ">
-            <h3>Software Engineer</h3>
+            <h3>{credentials.profession}</h3>
           </div>
           <div className="flex justify-center items-center gap-4 text-gray-700 dark:text-white pt-2">
             <FaGithub className="hover:text-black hover:cursor-pointer dark:hover:text-gray-400" />
@@ -71,7 +75,7 @@ const ProfileCard = () => {
 
             <div className="flex justify-start items-center space-x-2">
               <TfiEmail style={{ fontSize: "15px" }} />
-              <p>faiq@gmail.com</p>
+              <p>{credentials.email}</p>
             </div>
 
             <div className="flex justify-start items-center space-x-2">

@@ -4,14 +4,19 @@ import { createContext, useContext, useState } from "react";
 const StateContext = createContext();
 
 export const ContextProvider = ({children})=>{
-    const [data, setdata] = useState(null)
+
+    const [credentials, setCredentials] = useState({email:'', password:'', name:'', profession:''});
+
+    const onChange = (e) =>{
+        setCredentials({...credentials, [e.target.name]:e.target.value})
+    }
 
     return(
-        <StateContext.Provider value={{data}}>
+        <StateContext.Provider value={{credentials, setCredentials, onChange}}>
             {children}
         </StateContext.Provider>
     )
 
 }
 
-export const useStateContext = useContext(StateContext);
+export const useStateContext = ()=> useContext(StateContext);
