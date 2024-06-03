@@ -3,7 +3,7 @@ import { MdMovieEdit } from "react-icons/md";
 
 const SkillsCard = ({icon:Icon,iconStyles, title, description}) => {
   return (
-    <div className=" flex justify-between items-center  w-96 h-28 rounded-2xl bg-white dark:bg-gray-500 shadow-gray-300 shadow-md dark:shadow-none font-poppins">
+    <div className=" flex justify-between items-center  h-28 rounded-2xl bg-white dark:bg-gray-500 shadow-gray-300 shadow-md dark:shadow-none font-poppins">
       <div style={{ width: "20%" }} className="pl-6 pb-6 text-gray-700 dark:text-white">
         {<Icon style={iconStyles}/>}
       </div>

@@ -1,21 +1,19 @@
-import React from 'react'
-import SkillsCard from './SkillsCard';
-import { CgBrowser } from "react-icons/cg";
-import { FaLaptopCode } from "react-icons/fa";
-import { FaMobileScreenButton } from "react-icons/fa6";
-import { BsCamera2 } from "react-icons/bs";
-import { CgWebsite } from "react-icons/cg";
+import React from "react";
+import SkillComponents from "./SkillComponents";
+import EducationSection from "./EducationSection";
+import ExperienceSection from "./ExperienceSection";
+import ProjectSection from "./ProjectSection";
+import HeadingComponent from "./HeadingComponent";
 
-const MainCard = () => {
+const MainCard = ({roundness, AboutmeBg}) => {
   return (
-    <div className=" bg-white dark:bg-gray-800 pt-6  rounded-2xl overflow-hidden">
-      {/* div for about section */}
-      <div className="pb-[30px] px-5">
-        <div className=" font-poppins text-3xl font-bold text-gray-700 dark:text-white pb-4">
-          <h1>About Me</h1>
-          <div className="bg-blue-800 w-12 h-1.5 rounded-full mt-1 "></div>
-        </div>
-        <div className=" font-poppins font-semibold text-gray-500 dark:text-gray-300 text-sm">
+    <div
+      className={` ${AboutmeBg} dark:bg-gray-800 pt-6  ${roundness} overflow-hidden w-[60rem] `}
+    >
+      {/* div for about me section */}
+      <div className="pb-[30px] px-10">
+        <HeadingComponent name={"About Me"} />
+        <div className=" font-poppins font-semibold text-gray-500 dark:text-gray-300 text-sm pt-4">
           <p>
             As a software engineer, I'm driven by a passion for problem-solving
             and innovation. With a keen eye for detail and a knack for logical
@@ -29,53 +27,35 @@ const MainCard = () => {
           </p>
         </div>
       </div>
+      <div className=" bg-gray-400 dark:bg-white h-[2px] rounded-full  mt-4 "></div>
 
-      {/* div for what I'm Doing section */}
-      <div className=" bg-gray-100 dark:bg-gray-700 w-full px-5 font-poppins ">
-        <h1 className="text-gray-700 dark:text-white font-bold text-2xl pt-4">
-          What I'm Doing
-        </h1>
+      {/* div for the details section */}
+      <div className=" bg-gray-50 dark:bg-gray-700 w-full px-10 font-poppins pt-2">
+        <div className="mt-2">
+          <HeadingComponent name={"Skills"} />
+          <SkillComponents />
+        </div>
+        <div className=" bg-gray-400 dark:bg-white h-[2px] rounded-full mb-2 mt-4 "></div>
 
-        <div className="grid grid-cols-2 gap-8 sm:grid-cols-1 md:grid-cols-2  pt-4 pb-8">
-          <SkillsCard
-            title="Web Design"
-            description={
-              "The most modern and high qualtiy design made at professional level."
-            }
-            icon={CgWebsite}
-            iconStyles={{ fontSize: "35px" }}
-          />
+        <div className=" mt-4">
+          <HeadingComponent name={"Education"} />
+          <EducationSection />
+        </div>
 
-          <SkillsCard
-            title="Web Development"
-            description={
-              "High qualtiy development of the sites at a professional level."
-            }
-            icon={FaLaptopCode}
-            iconStyles={{ fontSize: "35px" }}
-          />
+        <div className=" bg-gray-400 dark:bg-white h-[2px] rounded-full mb-2 mt-2"></div>
+        <div className=" mt-4">
+          <HeadingComponent name={"Experience"} />
+          <ExperienceSection />
+        </div>
+        <div className=" bg-gray-400 dark:bg-white h-[2px] rounded-full mb-2 mt-4"></div>
 
-          <SkillsCard
-            title="Mobile Apps"
-            description={
-              "Professional development of applications for iOS and Android."
-            }
-            icon={FaMobileScreenButton}
-            iconStyles={{ fontSize: "35px" }}
-          />
-
-          <SkillsCard
-            title="Photography"
-            description={
-              "I make high quality photos of every category at professional level."
-            }
-            icon={BsCamera2}
-            iconStyles={{ fontSize: "35px" }}
-          />
+        <div className=" mt-4">
+          <HeadingComponent name={"Projects"} />
+          <ProjectSection />
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default MainCard
+export default MainCard;

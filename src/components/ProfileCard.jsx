@@ -15,11 +15,12 @@ import { useStateContext } from '../context/ContextProvider';
 
 const ProfileCard = () => {
 
-  const {credentials} = useStateContext();
+  const { credentials } = useStateContext();
 
   const showToast = () => {
-    toast.success("Downloading CV", {
-  
+    toast.success("CV Downloaded", {
+      autoClose: 1000,
+      hideProgressBar: true,
       loading:false,
       pauseOnFocusLoss: false,
       className:'bg-green-400 text-white rounded-3xl font-poppins font-bold ',
@@ -92,7 +93,7 @@ const ProfileCard = () => {
             className="flex items-center justify-center pt-4"
             onClick={showToast}
           >
-            <Button />
+            <Button bgColor={'blue-600'} hoverColor={'blue-700'}/>
             <ToastContainer position="bottom-center" />
           </div>
         </div>
