@@ -1,5 +1,5 @@
-import React from 'react'
-import Button from './Button'
+import React from "react";
+import Button from "./Button";
 import { IoCalendarOutline } from "react-icons/io5";
 import { TfiEmail } from "react-icons/tfi";
 import { FaMobileAlt } from "react-icons/fa";
@@ -10,24 +10,20 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer, toast } from "react-toastify";
-import MyImage from '../assets/myImg1.jpg'
-import { useStateContext } from '../context/ContextProvider';
+import MyImage from "../assets/myImg1.jpg";
+import { useStateContext } from "../context/ContextProvider";
 
 const ProfileCard = () => {
-
   const { credentials } = useStateContext();
 
   const showToast = () => {
     toast.success("CV Downloaded", {
       autoClose: 1000,
       hideProgressBar: true,
-      loading:false,
+      loading: false,
       pauseOnFocusLoss: false,
-      className:'bg-green-400 text-white rounded-3xl font-poppins font-bold ',
-      
-
+      className: "bg-green-400 text-white rounded-3xl font-poppins font-bold ",
     });
-
   };
   return (
     <div className="relative">
@@ -93,13 +89,13 @@ const ProfileCard = () => {
             className="flex items-center justify-center pt-4"
             onClick={showToast}
           >
-            <Button bgColor={'blue-600'} hoverColor={'blue-700'}/>
+            <Button bgColor={"blue-600"} hoverColor={"blue-700"} />
             <ToastContainer position="bottom-center" />
           </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
-export default ProfileCard
+export default ProfileCard;
